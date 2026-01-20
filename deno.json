@@ -11,6 +11,7 @@
     "fresh/runtime": "https://deno.land/x/fresh@1.5.0/runtime.ts",
     "@preact/signals": "https://esm.sh/@preact/signals@1.2.2",
     "@preact/preset-vite": "npm:@preact/preset-vite@2.10.2",
+    "vite": "npm:vite@7.3.1",
     "preact": "https://esm.sh/preact@10.19.5",
     "preact/": "https://esm.sh/preact@10.19.5/",
     "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.38.8",
