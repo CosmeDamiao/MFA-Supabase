@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MFA QR Code</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      padding: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container { 
+      max-width: 600px;
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    h1 { 
+      color: #1f2937;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .qr-box { 
+      border: 2px solid #ddd; 
+      padding: 20px; 
+      margin: 20px 0; 
+      background: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .info { 
+      background: #e3f2fd; 
+      padding: 15px; 
+      border-radius: 5px; 
+      margin: 20px 0;
+      border-left: 4px solid #667eea;
+    }
+    .manual-entry {
+      background: #f0f9ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      font-family: monospace;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 MFA Setup - Scan QR Code</h1>
+    <p style="text-align: center; color: #6b7280;">
+      Use this page to generate and display a QR code for MFA setup
+    </p>
+    
+    <div class="info">
+      <strong>Note:</strong> This is a static reference page. The actual MFA QR code is generated dynamically 
+      on the <strong>/mfa/enroll</strong> page during the authentication flow.
+    </div>
+    
+    <div class="qr-box">
+      <h3>Getting Started</h3>
+      <ol style="text-align: left;">
+        <li>Sign up at <a href="/">http://localhost:8000/signup</a></li>
+        <li>Login at <a href="/login">http://localhost:8000/login</a></li>
+        <li>Follow the MFA setup flow</li>
+        <li>Scan the QR code with your authenticator app</li>
+        <li>Enter the 6-digit code</li>
+      </ol>
+    </div>
+
+    <div class="manual-entry">
+      <h4>Manual Entry</h4>
+      <p>If you can't scan the QR code, you can manually enter the secret key shown during the enrollment process.</p>
+      <p style="color: #667eea; font-weight: bold;">Secret will be provided during enrollment</p>
+    </div>
+
+    <div class="info">
+      <strong>Supported Apps:</strong>
+      <ul>
+        <li>Google Authenticator</li>
+        <li>Authy</li>
+        <li>Microsoft Authenticator</li>
+        <li>1Password</li>
+        <li>Bitwarden</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
