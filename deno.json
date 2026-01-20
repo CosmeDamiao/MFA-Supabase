@@ -2,7 +2,7 @@
   "tasks": {
     "start": "deno run -A --watch=routes,islands,components,utils,middleware main.ts",
     "build": "deno task build:vite && deno bundle main.ts",
-    "build:vite": "vite build",
+    "build:vite": "deno run -A npm:vite build",
     "dev": "deno run -A main.ts",
     "test": "deno test --allow-all"
   },
