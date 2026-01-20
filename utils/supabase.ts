@@ -1,7 +1,14 @@
 import { createClient } from "jsr:@supabase/supabase-js@^2";
 import { load } from "dotenv";
 
-await load({ export: true });
+// Only load .env file in development (Deno Deploy uses platform env vars)
+if (Deno.env.get("DENO_DEPLOYMENT_ID") === undefined) {
+  try {
+    await load({ export: true, allowEmptyValues: true });
+  } catch {
+    // Ignore errors if .env doesn't exist
+  }
+}
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL");
 // Prefer explicit service role key; fall back to legacy SUPABASE_KEY for compatibility
